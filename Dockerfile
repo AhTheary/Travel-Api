@@ -12,11 +12,13 @@ COPY package*.json ./
 # install project dependencies
 RUN npm install
 
+RUN npm install -g nodemon
+
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
 
 # build app for production with minification
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 3001
 CMD [ "http-server", "dist" ]
