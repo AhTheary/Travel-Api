@@ -18,7 +18,6 @@ RUN npm install -g nodemon
 COPY . .
 
 # build app for production with minification
-RUN npm run build
 
 EXPOSE 3001
-CMD [ "http-server", "dist" ]
+CMD [ "nodemon", "index.js" ]
